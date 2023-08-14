@@ -11,7 +11,7 @@ pub fn main() {
   let mut next_id: u16 = 1; 
 
   loop {
-      let choice = crate::helper::create_menu("Todo App", &vec![
+      let choice: String = crate::helper::create_menu("Todo App", &vec![
         "Create Todo",
         "Read Todos",
         "Update Todo",

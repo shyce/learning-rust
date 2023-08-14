@@ -1,6 +1,7 @@
 
 use std::io::{self, Write};
 use std::str::FromStr;
+use std::fmt::Debug;
 
 // Generic version:
 pub fn read<T: FromStr>() -> T 
@@ -17,7 +18,7 @@ where
       .expect("Invalid entry. Try again.")
 }
 
-pub fn create_menu<T>(name: &str, items: &Vec<&str>) -> String {
+pub fn create_menu<T: std::str::FromStr>(name: &str, items: &Vec<&str>) -> T where <T as FromStr>::Err: Debug {
   println!("\n---------------");
   println!("{}", name.to_string());
   println!("---------------");
